@@ -1,14 +1,6 @@
 const { assert, expect } = require("chai")
 const { network, deployments, ethers, getNamedAccounts } = require("hardhat") // pull deployments from hardhat in order to deploy our contracts for testing
-const developmentChains = require("../../helper-hardhat-config")
-
-const chainId = network.config.chainId
-
-if (chainId === 31337) {
-    console.log("yes ChainId equals 31337")
-} else {
-    console.log(`chainId is: ${chainId}`)
-}
+const { developmentChains } = require("../../helper-hardhat-config")
 
 !developmentChains.includes(network.name)
     ? describe.skip
